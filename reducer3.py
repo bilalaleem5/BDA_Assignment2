@@ -23,3 +23,4 @@ def reducer_vocabulary():
 
 if _name_ == "_main_":
     reducer_vocabulary()
+
