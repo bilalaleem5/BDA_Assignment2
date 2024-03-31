@@ -3,17 +3,64 @@ Comprehensive Report on Indexing Engine and Ranker Engine Implementation
 1. Introduction
 The Indexing Engine and Ranker Engine are critical components of information retrieval systems, enabling efficient storage and retrieval of large volumes of text data. This report presents a detailed overview of the implementation of these engines using the Hadoop MapReduce framework. The project aims to leverage the scalability and parallel processing capabilities of MapReduce to handle the indexing and ranking tasks effectively.
 
-2. Background
-Traditional information retrieval systems often struggle to handle the massive volumes of text data generated in today's digital age. Indexing and ranking mechanisms are essential to enable users to quickly access relevant information from vast document collections. MapReduce offers a distributed computing paradigm well-suited for processing large datasets, making it an ideal choice for implementing these engines.
+2. Background: Traditional information retrieval systems often struggle to handle the massive volumes of text data generated in today's digital age. Indexing and ranking mechanisms are essential to enable users to quickly access relevant information from vast document collections. MapReduce offers a distributed computing paradigm well-suited for processing large datasets, making it an ideal choice for implementing these engines.
 
-3. Objectives
+3. Code Structure
+
+The project code comprises a series of mapper and reducer scripts to handle various stages of the indexing and ranking processes:
+
+    Mapper 1 and Reducer 1: Tokenize documents and generate a vocabulary index.
+    Mapper 2 and Reducer 2: Index documents and calculate TF-IDF (Term Frequency-Inverse Document Frequency) weights.
+    Mapper 3 and Reducer 3: Count term occurrences to create a vocabulary.
+    Mapper 4 and Reducer 4: Compute TF-IDF weights for query processing.
+    Mapper 5 and Reducer 5: Process user queries and retrieve relevant documents.
+    Mapper 6 and Reducer 6: Vectorize user queries for comparison with document vectors.
+    Mapper 7 and Reducer 7: Identify documents containing relevant terms.
+
+Mapper and Reducer Functions
+Mapper 1 and Reducer 1
+
+    Mapper 1: Tokenizes documents and emits (word, 1) pairs.
+    Reducer 1: Aggregates word counts and generates a vocabulary index.
+
+Mapper 2 and Reducer 2
+
+    Mapper 2: Generates TF-IDF weights for document terms.
+    Reducer 2: Aggregates TF-IDF weights for each term.
+
+Mapper 3 and Reducer 3
+
+    Mapper 3: Counts term occurrences in documents.
+    Reducer 3: Aggregates term occurrences to generate a vocabulary.
+
+Mapper 4 and Reducer 4
+
+    Mapper 4: Calculates TF-IDF weights for query terms.
+    Reducer 4: Processes user queries and returns relevant documents.
+
+Mapper 5 and Reducer 5
+
+    Mapper 5: Processes user queries and returns relevant documents.
+    Reducer 5: Vectorizes user queries for comparison with document vectors.
+
+Mapper 6 and Reducer 6
+
+    Mapper 6: Vectorizes user queries for comparison with document vectors.
+    Reducer 6: Processes user queries and returns relevant documents.
+
+Mapper 7 and Reducer 7
+
+    Mapper 7: Identifies documents containing relevant terms.
+    Reducer 7: Aggregates term occurrences in documents.
+
+4. Objectives
 The primary objectives of this project include:
     • Implementing an Indexing Engine to create an index for efficient document retrieval.
     • Developing a Ranker Engine to process user queries and return relevant documents.
     • Utilizing the Hadoop MapReduce framework for distributed processing of text data.
     • Evaluating the performance and effectiveness of the implemented engines.
 
-4. Methodology
+5. Methodology
 
 4.1. Data Preprocessing
 The input data consists of a text corpus containing articles with attributes such as ARTICLE_ID, TITLE, SECTION_TITLE, and SECTION_TEXT. Before processing, the data undergoes tokenization and cleaning to extract meaningful information.
