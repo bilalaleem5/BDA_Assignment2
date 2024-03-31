@@ -14,3 +14,4 @@ def mapper_query_vectorization():
 
 if _name_ == "_main_":
     mapper_query_vectorization()
+
