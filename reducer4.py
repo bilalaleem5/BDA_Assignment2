@@ -24,3 +24,4 @@ def reducer_tf_idf():
 
 if _name_ == "_main_":
     reducer_tf_idf()
+
