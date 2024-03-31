@@ -14,3 +14,4 @@ def reducer_query_processing():
 
 if _name_ == "_main_":
     reducer_query_processing()
+
