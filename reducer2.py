@@ -23,3 +23,4 @@ def reducer_word_indexing():
 if __name__ == "__main__":
     reducer_word_indexing()
 
+
