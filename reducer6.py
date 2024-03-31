@@ -9,3 +9,4 @@ def reducer_query_vectorization():
 
 if _name_ == "_main_":
     reducer_query_vectorization()
+
