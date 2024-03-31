@@ -24,6 +24,7 @@ def reducer():
         vocab[current_word] = len(vocab)
     
     for word, index in vocab.items():
+        
         print(f"{index}\t{word}")
 
 if __name__ == "__main__":
