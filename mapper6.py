@@ -4,6 +4,7 @@
 import sys
 
 def mapper_query_vectorization():
+    
     query_vector = {}
     for line in sys.stdin:
         term, count = line.strip().split('\t')
