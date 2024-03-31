@@ -10,3 +10,4 @@ def mapper_tf_idf():
 
 if _name_ == "_main_":
     mapper_tf_idf()
+
