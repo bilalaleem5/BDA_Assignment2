@@ -10,3 +10,4 @@ def mapper_vocabulary():
 
 if _name_ == "_main_":
     mapper_vocabulary()
+
