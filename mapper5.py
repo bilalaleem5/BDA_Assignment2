@@ -11,3 +11,4 @@ def mapper_query_processing():
 
 if _name_ == "_main_":
     mapper_query_processing()
+
