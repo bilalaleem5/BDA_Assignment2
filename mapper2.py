@@ -9,3 +9,4 @@ def mapper_word_indexing():
 if __name__ == "__main__":
     mapper_word_indexing()
 
+
